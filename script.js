@@ -21,6 +21,15 @@ window.addEventListener('keypress' , function(event){
     let rodRect = rod1.getBoundingClientRect();
 
 
+    if(event.code === "KeyD" && ((rodRect.x + rodRect.width) < window.innerWidth)){
+        rod1.style.left = (rodRect.x) + rodSpeed + 'px';
+        rod2.style.left = rod1.style.left;
+    }else if(event.code === "KeyA" && (rodRect.x > 0)) {
+        rod1.style.left = (rodRect.x) - rodSpeed + 'px';
+        rod2.style.left = rod1.style.left; 
+    }
+
+
     if(event.code === "Enter"){
         if(!gameon){
             gameon = true;
